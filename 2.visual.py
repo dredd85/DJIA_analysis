@@ -9,7 +9,8 @@ df = pd.read_sql_query(query, conn)
 ma_period25 = 25
 ma_period50 = 50
 
-df['Month'] = pd.to_datetime(df['Month'])  # Convert 'Month' column to datetime format
+# Convert 'Month' column to datetime format
+df['Month'] = pd.to_datetime(df['Month']) 
 df['MA25'] = df['Price'].rolling(window=ma_period25).mean()
 df['MA50'] = df['Price'].rolling(window=ma_period50).mean()
 
